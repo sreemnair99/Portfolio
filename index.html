@@ -18,18 +18,18 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Poppins',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;cursor:none;}
-
+body{font-family:'Poppins',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;}
+ 
 /* ── CURSOR ── */
 .cursor{position:fixed;width:8px;height:8px;background:var(--pink);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);box-shadow:0 0 10px var(--pink),0 0 20px var(--pink);transition:width 0.18s,height 0.18s,background 0.18s,border 0.18s,box-shadow 0.18s;}
 .cursor-ring{position:fixed;width:32px;height:32px;border:1.5px solid rgba(192,192,192,0.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.25s,height 0.25s,border-color 0.25s,box-shadow 0.25s;}
-
+ 
 @keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes slowspin{to{transform:translateY(-50%) rotate(360deg);}}
 @keyframes slowspinrev{to{transform:rotate(-360deg);}}
 @keyframes shimmer{to{background-position:200% 0;}}
-
+ 
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 4rem;background:rgba(8,8,8,0.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,45,120,0.2);}
 .nav-logo{font-family:'Philosopher',serif;font-size:1.1rem;font-style:italic;color:var(--white);letter-spacing:0.04em;}
@@ -39,37 +39,37 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--pink);transition:width 0.3s;}
 .nav-links a:hover{color:var(--white);}
 .nav-links a:hover::after{width:100%;}
-
+ 
 /* ── DIVIDER ── */
 .thin-line{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,45,120,0.3),rgba(192,192,192,0.3),transparent);}
-
+ 
 /* ── SECTION BASE ── */
 section{padding:7rem 5rem;position:relative;z-index:1;}
 .section-label{font-size:0.68rem;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--pink);margin-bottom:0.8rem;display:block;}
 .section-title{font-family:'Philosopher',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;line-height:1.2;margin-bottom:3rem;color:var(--white);}
 .accent{color:var(--pink);}
 .accent-s{color:var(--silver);}
-
+ 
 /* ── HERO ── */
 #hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:9rem 5rem 5rem;overflow:hidden;background:var(--ink);}
 #hero::before{content:'';position:absolute;top:0;right:0;width:55%;height:100%;background:radial-gradient(ellipse 70% 70% at 70% 40%,rgba(255,45,120,0.08) 0%,transparent 70%);pointer-events:none;}
 .hero-mandala{position:absolute;right:-140px;top:50%;transform:translateY(-50%);width:620px;height:620px;opacity:0.07;animation:slowspin 100s linear infinite;}
 .hero-content{position:relative;z-index:1;max-width:680px;}
-.hero-tag{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--silver);margin-bottom:2rem;animation:fadeUp 0.8s ease both;}
-h1.hero-name{font-family:'Philosopher',serif;font-size:clamp(3rem,6.5vw,6rem);line-height:1.06;margin-bottom:1rem;animation:fadeUp 0.8s 0.1s ease both;}
+.hero-tag{display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--silver);margin-bottom:2rem;}
+h1.hero-name{font-family:'Philosopher',serif;font-size:clamp(3rem,6.5vw,6rem);line-height:1.06;margin-bottom:1rem;}
 .name-line1{display:block;background:linear-gradient(135deg,#fff 0%,var(--pink) 60%,var(--silver) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 200%;animation:gradShift 5s ease infinite;}
 .name-line2{display:block;color:rgba(255,255,255,0.85);font-style:italic;}
-.hero-tagline{font-size:1rem;font-weight:300;color:rgba(255,255,255,0.55);margin-bottom:2.8rem;line-height:1.85;max-width:460px;animation:fadeUp 0.8s 0.2s ease both;}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.8s 0.3s ease both;}
+.hero-tagline{font-size:1rem;font-weight:300;color:rgba(255,255,255,0.55);margin-bottom:2.8rem;line-height:1.85;max-width:460px;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
 .btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--pink);color:#fff;text-decoration:none;padding:0.85rem 2rem;font-weight:600;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;transition:opacity 0.3s,transform 0.3s,box-shadow 0.3s;}
 .btn-primary:hover{opacity:0.88;transform:translateY(-2px);box-shadow:0 8px 28px var(--pink-glow);}
 .btn-secondary{display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:var(--silver);text-decoration:none;padding:0.85rem 2rem;font-weight:500;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;border:1px solid rgba(192,192,192,0.35);border-radius:2px;transition:all 0.3s;}
 .btn-secondary:hover{border-color:var(--silver-bright);color:var(--white);}
-.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;animation:fadeUp 0.8s 0.4s ease both;}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;}
 .stat-num{font-family:'Philosopher',serif;font-size:2.2rem;font-weight:700;color:var(--white);line-height:1;}
 .stat-num span{color:var(--pink);}
 .stat-label{font-size:0.68rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.14em;margin-top:0.3rem;}
-
+ 
 /* ── ABOUT ── */
 #about{background:var(--ink-2);}
 .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
@@ -79,7 +79,7 @@ h1.hero-name{font-family:'Philosopher',serif;font-size:clamp(3rem,6.5vw,6rem);li
 .skill-tile{background:transparent;border:1px solid rgba(255,255,255,0.08);border-radius:3px;padding:0.9rem 1.1rem;display:flex;align-items:center;gap:0.75rem;font-size:0.82rem;font-weight:400;color:rgba(255,255,255,0.7);transition:all 0.3s;}
 .skill-tile:hover{border-color:rgba(255,45,120,0.4);color:#fff;background:rgba(255,45,120,0.05);}
 .skill-dot{width:5px;height:5px;border-radius:50%;background:var(--pink);flex-shrink:0;}
-
+ 
 /* ── WORK ── */
 #work{background:var(--ink);}
 .case-stack{display:flex;flex-direction:column;gap:2rem;}
@@ -111,7 +111,7 @@ h1.hero-name{font-family:'Philosopher',serif;font-size:clamp(3rem,6.5vw,6rem);li
 .sp-m{background:rgba(192,192,192,0.03);border:1px solid rgba(192,192,192,0.12);}
 .sub-label{font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem;}
 .sl-s{color:var(--pink);}.sl-m{color:var(--silver);}
-
+ 
 /* ── SERVICES ── */
 #services{background:var(--ink-2);}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
@@ -120,13 +120,13 @@ h1.hero-name{font-family:'Philosopher',serif;font-size:clamp(3rem,6.5vw,6rem);li
 .svc-icon{font-size:1.4rem;margin-bottom:1.1rem;display:block;opacity:0.85;}
 .service-card h3{font-family:'Philosopher',serif;font-size:1.05rem;font-weight:700;margin-bottom:0.65rem;color:#fff;}
 .service-card p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.75;font-weight:300;}
-
+ 
 /* ── TOOLS ── */
 #tools{background:var(--ink);}
 .tools-cloud{display:flex;flex-wrap:wrap;gap:0.7rem;}
 .tool-pill{background:transparent;border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:0.5rem 1.2rem;font-size:0.8rem;font-weight:400;color:rgba(255,255,255,0.6);transition:all 0.25s;}
 .tool-pill:hover{border-color:rgba(255,45,120,0.5);color:var(--white);background:rgba(255,45,120,0.06);}
-
+ 
 /* ── COPYWRITING ── */
 #copywriting{background:var(--ink-2);}
 .copy-filter-bar{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.5rem;}
@@ -155,7 +155,7 @@ h1.hero-name{font-family:'Philosopher',serif;font-size:clamp(3rem,6.5vw,6rem);li
 .c-dots{display:flex;gap:4px;}
 .c-dot{width:5px;height:5px;background:rgba(255,255,255,0.15);border-radius:50%;transition:background 0.2s,transform 0.2s;cursor:pointer;}
 .c-dot.active{background:var(--pink);transform:scale(1.3);}
-
+ 
 /* ── CONTACT ── */
 #contact{background:var(--ink);text-align:center;padding:7rem 5rem;}
 .contact-lead{font-family:'Philosopher',serif;font-size:clamp(1.6rem,3vw,2.5rem);font-weight:700;color:var(--white);margin-bottom:0.8rem;}
@@ -168,10 +168,10 @@ h1.hero-name{font-family:'Philosopher',serif;font-size:clamp(3rem,6.5vw,6rem);li
 .contact-item-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.3);display:block;margin-bottom:0.15rem;}
 .contact-item-value{font-size:0.85rem;color:rgba(255,255,255,0.8);}
 footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.06);font-size:0.74rem;color:rgba(255,255,255,0.18);font-weight:300;background:var(--ink);}
-
-.reveal{opacity:1;transform:translateY(0);transition:opacity 0.65s ease,transform 0.65s ease;}
+ 
+.reveal{opacity:1 !important;transform:none !important;}
 .reveal.visible{opacity:1;transform:translateY(0);}
-
+ 
 /* ── EXPERIENCE ── */
 #experience{background:var(--ink-2);}
 .exp-stack{display:flex;flex-direction:column;gap:0;}
@@ -187,7 +187,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
 .exp-points li{font-size:0.84rem;color:rgba(255,255,255,0.58);line-height:1.7;font-weight:300;padding-left:1rem;position:relative;}
 .exp-points li::before{content:'—';position:absolute;left:0;color:rgba(255,45,120,0.5);font-size:0.75rem;}
 .exp-tag-pub{display:inline-block;font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink);background:rgba(255,45,120,0.08);border:1px solid rgba(255,45,120,0.2);border-radius:2px;padding:0.2rem 0.6rem;margin-bottom:0.6rem;}
-
+ 
 /* ── EDUCATION ── */
 #education{background:var(--ink);}
 .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
@@ -196,7 +196,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
 .edu-degree{font-family:'Philosopher',serif;font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:0.35rem;}
 .edu-school{font-size:0.8rem;color:rgba(255,255,255,0.55);margin-bottom:0.25rem;}
 .edu-location{font-size:0.72rem;color:rgba(255,255,255,0.3);}
-
+ 
 @media(max-width:900px){
   nav{padding:1rem 1.5rem;}
   .nav-links{gap:1rem;flex-wrap:wrap;}
@@ -215,10 +215,10 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
 </style>
 </head>
 <body>
-
+ 
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
-
+ 
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Sreelakshmi <span>M.K.</span></div>
@@ -232,7 +232,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <section id="hero">
   <!-- Large mandala -->
@@ -260,7 +260,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
       <polygon points="0,50 29,-40 -29,-40" fill="none" stroke="#FF6FA8" stroke-width="1.5"/>
     </g>
   </svg>
-
+ 
   <div class="hero-content">
     <div class="hero-tag">Digital Marketer · Social Media · Content Strategy</div>
     <h1 class="hero-name">
@@ -280,9 +280,9 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
     </div>
   </div>
 </section>
-
+ 
 <div class="thin-line"></div>
-
+ 
 <!-- ABOUT -->
 <section id="about">
   <div class="about-inner">
@@ -305,15 +305,15 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
     </div>
   </div>
 </section>
-
+ 
 <div class="thin-line"></div>
-
+ 
 <!-- WORK -->
 <section id="work">
   <div class="section-label">Case Studies</div>
   <h2 class="section-title">Work that <span class="accent">speaks.</span></h2>
   <div class="case-stack">
-
+ 
     <!-- MBricks -->
     <div class="case-card reveal">
       <div class="case-header">
@@ -332,7 +332,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
         <div class="result-gem"><span class="result-num">1.6M+</span><div class="result-desc">Unique Reach</div></div>
       </div>
     </div>
-
+ 
     <!-- SM Fresh Bazar -->
     <div class="case-card reveal">
       <div class="case-header">
@@ -351,7 +351,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
         <div class="result-gem"><span class="result-num">6</span><div class="result-desc">Staff Hired</div></div>
       </div>
     </div>
-
+ 
     <!-- Prism Eyewear -->
     <div class="case-card reveal">
       <div class="case-header">
@@ -381,18 +381,18 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
         </div>
       </div>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <div class="thin-line"></div>
-
+ 
 <!-- EXPERIENCE -->
 <section id="experience">
   <span class="section-label">Work Experience</span>
   <h2 class="section-title">Where I've <span class="accent">been so far.</span></h2>
   <div class="exp-stack">
-
+ 
     <!-- The Content Cult -->
     <div class="exp-item reveal">
       <div class="exp-left">
@@ -412,7 +412,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
         </ul>
       </div>
     </div>
-
+ 
     <!-- Maitri Advertising Agency -->
     <div class="exp-item reveal">
       <div class="exp-left">
@@ -431,7 +431,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
         </ul>
       </div>
     </div>
-
+ 
     <!-- Brandpackt Solutions -->
     <div class="exp-item reveal">
       <div class="exp-left">
@@ -450,7 +450,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
         </ul>
       </div>
     </div>
-
+ 
     <!-- Poptale Advertising -->
     <div class="exp-item reveal">
       <div class="exp-left">
@@ -469,7 +469,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
         </ul>
       </div>
     </div>
-
+ 
     <!-- IQVIA -->
     <div class="exp-item reveal">
       <div class="exp-left">
@@ -486,7 +486,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
         </ul>
       </div>
     </div>
-
+ 
     <!-- CSES -->
     <div class="exp-item reveal">
       <div class="exp-left">
@@ -503,7 +503,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
         </ul>
       </div>
     </div>
-
+ 
     <!-- Caritas India -->
     <div class="exp-item reveal">
       <div class="exp-left">
@@ -520,12 +520,12 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
         </ul>
       </div>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <div class="thin-line"></div>
-
+ 
 <!-- EDUCATION -->
 <section id="education">
   <span class="section-label">Education</span>
@@ -548,9 +548,9 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
     </div>
   </div>
 </section>
-
+ 
 <div class="thin-line"></div>
-
+ 
 <!-- SERVICES -->
 <section id="services">
   <div class="section-label">What I Offer</div>
@@ -564,9 +564,9 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
     <div class="service-card reveal"><div class="svc-icon">📊</div><h3>Performance Reporting</h3><p>Clear, insight-led reporting on campaign performance — tracking what matters and making decisions that continuously improve results.</p></div>
   </div>
 </section>
-
+ 
 <div class="thin-line"></div>
-
+ 
 <!-- TOOLS -->
 <section id="tools">
   <div class="section-label">Tech & Tools</div>
@@ -588,9 +588,9 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
     <span class="tool-pill">Performance Reporting</span>
   </div>
 </section>
-
+ 
 <div class="thin-line"></div>
-
+ 
 <!-- COPYWRITING -->
 <section id="copywriting">
   <div class="section-label">Copywriting</div>
@@ -603,7 +603,7 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
     <button class="copy-filter" onclick="filterCopy('brochure',this)">Brochure</button>
   </div>
   <div class="copy-grid">
-
+ 
     <!-- HiLITE Carousel -->
     <div class="copy-card span-2 reveal" data-category="campaign">
       <div class="copy-card-header"><span class="copy-brand-badge">HiLITE Mall</span><span class="copy-type-badge">Christmas Campaign · Instagram Carousel · 8 Slides</span></div>
@@ -629,32 +629,32 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
         <button class="c-btn" onclick="moveCarousel(1)">›</button>
       </div>
     </div>
-
+ 
     <div class="copy-card reveal" data-category="social ad"><div class="copy-card-header"><span class="copy-brand-badge">Euro Guard</span><span class="copy-type-badge">Instagram Caption · Product Ad</span></div><div class="copy-img-wrap" style="margin-top:1rem;"><img class="copy-img" src="images/euroguard1.jpeg"/></div><div class="copy-body"><div class="copy-headline">Made for Industrial-Sized Protection!</div><p class="copy-text">"Euro Guard introduces 12-inch rainwater gutters specially made for large-scale establishments, including industries, factories, warehouses, stadiums and more!"</p></div></div>
-
+ 
     <div class="copy-card reveal" data-category="social ad"><div class="copy-card-header"><span class="copy-brand-badge">Euro Guard</span><span class="copy-type-badge">Instagram Caption · Feature Ad</span></div><div class="copy-img-wrap" style="margin-top:1rem;"><img class="copy-img" src="images/euroguard2.jpeg"/></div><div class="copy-body"><div class="copy-headline">Experience the Art of Easy Installation!</div><p class="copy-text">"Euro Guard's rainwater gutters stand out for their effortless installation process… fabricators are guaranteed a swift and hassle-free set-up."</p></div></div>
-
+ 
     <div class="copy-card reveal" data-category="social"><div class="copy-card-header"><span class="copy-brand-badge">Sunny Diamonds</span><span class="copy-type-badge">Instagram Caption · Luxury Jewellery</span></div><div class="copy-img-wrap" style="margin-top:1rem;"><img class="copy-img" src="images/sunnydiamonds1.jpeg"/></div><div class="copy-body"><div class="copy-headline">A Symphony of Elegance</div><p class="copy-text">"Immerse yourself in a symphony of elegance with this 18K rose gold necklace — a testament to refined craftsmanship. Sparkling diamonds harmonize with captivating blue stones, creating an ethereal allure."</p></div></div>
-
+ 
     <div class="copy-card reveal" data-category="social"><div class="copy-card-header"><span class="copy-brand-badge">Francis Alukkas</span><span class="copy-type-badge">Instagram Caption · Bridal Jewellery</span></div><div class="copy-img-wrap" style="margin-top:1rem;"><img class="copy-img" src="images/francisalukkas.jpeg"/></div><div class="copy-body"><div class="copy-headline">Crafted for the Perfect Bride</div><p class="copy-text">"Flaunt the perfection of experienced artistry specially crafted for the perfect bride. From earrings that echo the ethereal grace of a bride to rings that sit perfectly as the ultimate symbol of love…"</p></div></div>
-
+ 
     <div class="copy-card reveal" data-category="social ad"><div class="copy-card-header"><span class="copy-brand-badge">Oralium</span><span class="copy-type-badge">Instagram Caption · Premium Roofing</span></div><div class="copy-img-wrap" style="margin-top:1rem;"><img class="copy-img" src="images/oralium.jpeg"/></div><div class="copy-body"><div class="copy-headline">Catch the Gaze of the World</div><p class="copy-text">"Oralium's premium roofing sheets offer optimal performance with heat resistance, anti-rust properties, and durability without compromising the aesthetic appeal of your home."</p></div></div>
-
+ 
     <div class="copy-card reveal" data-category="social campaign"><div class="copy-card-header"><span class="copy-brand-badge">Wazaitoon × Hearthy</span><span class="copy-type-badge">Instagram Caption · World Sleep Day</span></div><div class="copy-img-wrap" style="margin-top:1rem;"><img class="copy-img" src="images/wazaitoon1.jpeg"/></div><div class="copy-body"><div class="copy-headline">Put You Right to Sleep</div><p class="copy-text">"On this World Sleep Day, take a break from restless, sleepless nights and head to Hearthy or Wazaitoon for a curated collection of teas known to give a good night's sleep…"</p></div></div>
-
+ 
     <div class="copy-card reveal" data-category="social campaign"><div class="copy-card-header"><span class="copy-brand-badge">Wazaitoon × Hearthy</span><span class="copy-type-badge">Instagram Caption · Happiness Day</span></div><div class="copy-img-wrap" style="margin-top:1rem;"><img class="copy-img" src="images/wazaitoon2.jpeg"/></div><div class="copy-body"><div class="copy-headline">A Healthy Heap of Happiness</div><p class="copy-text">"Boost your happiness with a handful of joy! Celebrate International Day of Happiness with Hearthy and Wazaitoon — superfoods that boost dopamine levels, the happy hormone!"</p></div></div>
-
+ 
     <div class="copy-card reveal" data-category="social"><div class="copy-card-header"><span class="copy-brand-badge">Zephyr Entrance</span><span class="copy-type-badge">Instagram Caption · Education</span></div><div class="copy-img-wrap" style="margin-top:1rem;"><img class="copy-img" src="images/zephyr.jpeg"/></div><div class="copy-body"><div class="copy-headline">Take a Step Closer to Your Dreams</div><p class="copy-text">"Do you know why post-exam work is important? Prof. Dr. G. Ajith Kumar shares his expert advice on how remedial work can help students crack competitive exams!"</p></div></div>
-
+ 
     <div class="copy-card reveal" data-category="social campaign"><div class="copy-card-header"><span class="copy-brand-badge">BrandPackt</span><span class="copy-type-badge">Social Post · World Music Day</span></div><div class="copy-img-wrap" style="margin-top:1rem;"><img class="copy-img" src="images/brandpackt.jpeg"/></div><div class="copy-body"><div class="copy-headline">We do marketing, mainly digitala la la la la laaaaa…</div><p class="copy-text">A witty, tone-of-voice post for a digital marketing agency celebrating World Music Day — playful, self-aware, and completely on-brand.</p></div></div>
-
+ 
     <div class="copy-card span-2 reveal" data-category="brochure"><div class="copy-card-header"><span class="copy-brand-badge">Amrita Vishwa Vidyapeetham</span><span class="copy-type-badge">Brochure Copy · Nanosciences & Molecular Medicine</span></div><div class="copy-img-wrap" style="margin-top:1rem;"><img class="copy-img" src="images/amrita.png"/></div><div class="copy-body"><div class="copy-headline">A Launchpad for Exciting Careers</div><p class="copy-text">Full brochure copy for Amrita School of Nanosciences and Molecular Medicine — communicating academic excellence, world-class research infrastructure, and cutting-edge PG/PhD programmes to prospective students.</p></div></div>
-
+ 
   </div>
 </section>
-
+ 
 <div class="thin-line"></div>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <span class="section-label">Let's Connect</span>
@@ -684,17 +684,17 @@ footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(255,255,255,0.
     </a>
   </div>
 </section>
-
+ 
 <div class="thin-line"></div>
 <footer><p>© 2025 Sreelakshmi Manoj Kumar · Digital Marketing Strategist · Crafted with colour & intention ✦</p></footer>
-
+ 
 <script>
 // ── CURSOR SYSTEM ──────────────────────────────────────────────
 const cursor = document.getElementById('cursor');
 const ring   = document.getElementById('cursorRing');
 let mx=0, my=0, rx=0, ry=0;
 let isHovering = false;
-
+ 
 // Trail pool
 const TRAIL_COUNT = 14;
 const trailPool = [];
@@ -705,7 +705,7 @@ for(let i=0;i<TRAIL_COUNT;i++){
   document.body.appendChild(t);
   trailPool.push({el:t, x:0, y:0, life:0});
 }
-
+ 
 // Spark emitter on click
 function spawnSparks(x, y){
   const count = 10;
@@ -742,7 +742,7 @@ function spawnSparks(x, y){
     requestAnimationFrame(animate);
   }
 }
-
+ 
 // Click ripple
 function spawnRipple(x, y){
   const r = document.createElement('div');
@@ -767,7 +767,7 @@ function spawnRipple(x, y){
     requestAnimationFrame(a2);
   },80);
 }
-
+ 
 // Trail smear
 let trailIdx=0, lastTrailX=0, lastTrailY=0;
 function spawnTrail(x,y){
@@ -789,7 +789,7 @@ function spawnTrail(x,y){
   clearTimeout(t.timer);
   t.timer = setTimeout(()=>{ t.el.style.opacity='0'; }, isHovering?200:140);
 }
-
+ 
 // Main mousemove
 document.addEventListener('mousemove', e => {
   mx = e.clientX; my = e.clientY;
@@ -797,7 +797,7 @@ document.addEventListener('mousemove', e => {
   cursor.style.top  = my+'px';
   spawnTrail(mx, my);
 });
-
+ 
 // Lag ring
 (function animRing(){
   rx += (mx-rx)*0.1;
@@ -806,7 +806,7 @@ document.addEventListener('mousemove', e => {
   ring.style.top  = ry+'px';
   requestAnimationFrame(animRing);
 })();
-
+ 
 // Click
 document.addEventListener('mousedown', e => {
   spawnSparks(e.clientX, e.clientY);
@@ -820,7 +820,7 @@ document.addEventListener('mouseup', ()=>{
   cursor.style.background=isHovering?'transparent':'#FF2D78';
   cursor.style.boxShadow=isHovering?'none':'0 0 12px #FF2D78, 0 0 24px #FF2D78';
 });
-
+ 
 // Hover states
 document.querySelectorAll('a,button,.tool-pill,.skill-tile,.copy-card,.service-card,.case-card').forEach(el=>{
   el.addEventListener('mouseenter',()=>{
@@ -848,7 +848,7 @@ document.querySelectorAll('a,button,.tool-pill,.skill-tile,.copy-card,.service-c
     ring.style.boxShadow='none';
   });
 });
-
+ 
 // ── SCROLL REVEAL ──────────────────────────────────────────────
 const obs = new IntersectionObserver((entries)=>{
   entries.forEach((e,i)=>{
@@ -861,7 +861,7 @@ const obs = new IntersectionObserver((entries)=>{
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 // Fallback: show all after 2s in case observer doesn't fire (e.g. local file)
 setTimeout(()=>document.querySelectorAll('.reveal:not(.visible)').forEach(el=>el.classList.add('visible')), 2000);
-
+ 
 // ── CAROUSEL ──────────────────────────────────────────────────
 let ci=0;
 function moveCarousel(d){ci=(ci+d+8)%8;updC();}
@@ -870,7 +870,7 @@ function updC(){
   document.getElementById('track-hilite').style.transform=`translateX(-${ci*100}%)`;
   document.querySelectorAll('#c-dots .c-dot').forEach((d,i)=>d.classList.toggle('active',i===ci));
 }
-
+ 
 // ── EMAIL (built at runtime to bypass Cloudflare protection) ──
 (function(){
   var u='sreemnair99';
@@ -881,7 +881,15 @@ function updC(){
   if(link){ link.href='mai'+'lto:'+e; }
   if(display){ display.textContent=e; }
 })();
-
+ 
 // ── COPY FILTER ───────────────────────────────────────────────
 function filterCopy(cat,btn){
-  document.querySelectorAll('.copy-filter').forEach(b=>b.cl
+  document.querySelectorAll('.copy-filter').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.copy-card').forEach(c=>{
+    c.style.display=(cat==='all'||(c.dataset.category&&c.dataset.category.includes(cat)))?'':'none';
+  });
+}
+</script>
+</body>
+</html>
